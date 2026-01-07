@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import variables from "@/app/styles/variables";
 
 export const GlobalStyle = createGlobalStyle`
 	* {
@@ -16,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
 		outline: 0;
 		font-weight: normal;
 		font-size: 1.6rem;
+		font-family: ${variables.fonts.secondary};
 	}
 
 	button {

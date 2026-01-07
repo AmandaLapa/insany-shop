@@ -1,9 +1,12 @@
 import { NextPage } from "next";
+import Hero from "./components/hero";
+import Categories from "./components/categories";
 
 const Home: NextPage = () => {
 	return (
 		<main>
-			<h1 style={{ fontWeight: "800" }}>Insany</h1>
+			<Hero />
+			<Categories />
 		</main>
 	);
 };

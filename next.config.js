@@ -12,6 +12,10 @@ const nextConfig = {
 		styledComponents: true,
 	},
 
+	images: {
+		domains: ["images.unsplash.com"],
+	},
+
 	async headers() {
 		const securityHeaders = [
 			{

@@ -1,6 +1,7 @@
-import { Inter } from "next/font/google";
+import { Inter, Saira } from "next/font/google";
 import StyledComponentsRegistry from "../lib/registry";
 import { Viewport } from "next";
+import { Header } from "@/ui/core";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -9,21 +10,28 @@ const inter = Inter({
 	weight: ["400", "500", "600", "700", "800"],
 });
 
+const saira = Saira({
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--saira",
+	weight: ["400", "500"],
+});
+
 export async function generateMetadata() {
 	return {
 		metadataBase: new URL("https://insanydesign.com/"),
 		title: {
-			default: "template-insany",
+			default: "InsanyShop",
 			template: `%s - insany`,
 		},
 
-		description: "lorem ipsum",
+		description: "Produtos Insanos para você!",
 		robots: "/robots.txt",
 
 		openGraph: {
 			type: "website",
-			title: `Acessar template-insany`,
-			description: "lorem ipsum",
+			title: `InsanyShop`,
+			description: "Produtos Insanos para você!",
 			siteName: "Insany-name",
 			locale: "pt_BR",
 			alternateLocale: "en_US",
@@ -47,8 +55,8 @@ export async function generateMetadata() {
 		},
 
 		twitter: {
-			title: `Acessar template-insany`,
-			description: "lorem ipsum",
+			title: `InsanyShop`,
+			description: "Produtos Insanos para você!",
 			card: "summary_large_image",
 			creator: "@insanydesign",
 
@@ -116,7 +124,8 @@ export default async function RootLayout({
 }) {
 	return (
 		<html lang="pt-br">
-			<body className={`${inter.variable}`}>
+			<body className={`${inter.variable} ${saira.variable}`}>
+				<Header />
 				<StyledComponentsRegistry>{children}</StyledComponentsRegistry>
 			</body>
 		</html>
